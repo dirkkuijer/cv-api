@@ -39,7 +39,6 @@ Route::get('/works/{id}', [WorkController::class, 'show']);
 
 // Authorisation
 Route::post('/login', [AuthController::class, 'login']);
-Route::post('/register', [AuthController::class, 'register']);
 
 // Protected routes
 Route::group(['middleware' => ['auth:sanctum']], function() {
@@ -71,6 +70,8 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
 
     // User access
     Route::post('/logout', [AuthController::class, 'logout']);
+    // I am the only one to register persons
+    Route::post('/register', [AuthController::class, 'register']);
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
