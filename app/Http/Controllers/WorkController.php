@@ -57,6 +57,7 @@ class WorkController extends Controller
     {
         $work = Work::find($id);
         $work->update($request->all());
+        return $work;
     }
 
     /**

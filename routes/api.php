@@ -29,16 +29,16 @@ Route::get('/educations', [EducationController::class, 'index']);
 Route::get('/educations/{id}', [EducationController::class, 'show']);
 
 Route::get('/languages', [LanguageController::class, 'index']);
-Route::get('/languages', [LanguageController::class, 'store']);
+Route::get('/languages/{id}', [LanguageController::class, 'show']);
 
 Route::get('/skills', [SkillsController::class, 'index']);
-Route::get('/skills', [SkillsController::class, 'store']);
+Route::get('/skills/{id}', [SkillsController::class, 'show']);
 
 Route::get('/works', [WorkController::class, 'index']);
-Route::get('/works', [WorkController::class, 'store']);
+Route::get('/works/{id}', [WorkController::class, 'show']);
 
 // Authorisation
-Route::get('/login', [AuthController::class, 'login']);
+Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AuthController::class, 'register']);
 
 // Protected routes
